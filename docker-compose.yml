@@ -2,9 +2,9 @@ version: '3.8'
 services:
     php-apache:
         build: 
-            context: ./php-apache-ext/
+            context: ./php-apache/
             dockerfile: Dockerfile
-        container_name: php-apache-ext
+        container_name: php-apache
         depends_on: 
             - mariadb
         volumes: 
@@ -17,10 +17,10 @@ services:
         image: mariadb
         
         environment:
-            MYSQL_ROOT_PASSWORD: kobeni
+            MYSQL_ROOT_PASSWORD: MYSQL_ROOT_PASSWORD
             MYSQL_DATABASE: MYSQL_DATABASE
-            MYSQL_USER: admin
-            MYSQL_PASSWORD: kobeni
+            MYSQL_USER: MYSQL_USER
+            MYSQL_PASSWORD: MYSQL_PASSWORD
         ports:
             - 3306:3306
         volumes: 
