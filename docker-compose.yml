@@ -1,8 +1,7 @@
 version: '3.8'
 services:
     php-apache:
-        build: .
-        dockerfile: php-apache-ext.dockerfile
+        build: ./php-apache-ext/
         container_name: php-apache-ext
         depends_on: 
             - mariadb
