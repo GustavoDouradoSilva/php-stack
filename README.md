@@ -7,3 +7,6 @@ these enviroment variables should be setted up
 - MYSQL_DATABASE: MYSQL_DATABASE
 - MYSQL_USER: MYSQL_USER
 - MYSQL_PASSWORD: MYSQL_PASSWORD
+
+recommendation:
+https://www.section.io/engineering-education/dockerized-php-apache-and-mysql-container-development-environment/
