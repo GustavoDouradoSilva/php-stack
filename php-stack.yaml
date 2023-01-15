@@ -1,0 +1,41 @@
+version: '3.8'
+services:
+    php-apache:
+        image: php-apache-ext:php-apache-ext
+        container_name: php-apache-ext
+        depends_on: 
+            - mariadb
+        volumes: 
+            - apache_data:/var/www/html/
+        ports:
+            - 80:80
+        restart: unless-stopped
+    mariadb:
+        container_name: mariadb
+        image: mariadb
+        
+        environment:
+            MYSQL_ROOT_PASSWORD: kobeni
+            MYSQL_DATABASE: MYSQL_DATABASE
+            MYSQL_USER: admin
+            MYSQL_PASSWORD: kobeni
+        ports:
+            - 3306:3306
+        volumes: 
+            - mariadb:/var/lib/mysql
+        restart: unless-stopped
+    phpmyadmin:
+         container_name: phpmyadmin
+         image: phpmyadmin:latest
+         ports:
+            - 81:80
+         restart: unless-stopped
+         environment:
+             PMA_HOST: mariadb
+         depends_on: 
+            - mariadb
+volumes:
+    mariadb:
+    apache_data:
+    
+    
