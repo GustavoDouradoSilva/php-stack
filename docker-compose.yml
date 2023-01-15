@@ -33,7 +33,7 @@ services:
             - 81:80
          restart: unless-stopped
          environment:
-             PMA_HOST: mariadb
+             PMA_HOST: mariadb:3306
          depends_on: 
             - mariadb
 volumes:
